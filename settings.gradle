@@ -1,0 +1,9 @@
+include ':module-app',
+        ':module-main',
+        ':lib-common',
+        ':lib-socket',
+        ':lib-router',
+        ':lib-log',
+        ':device-ir',
+        ':device-door',
+        ':device-plug'
