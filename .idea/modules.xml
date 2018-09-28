@@ -3,15 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Modulize.iml" filepath="$PROJECT_DIR$/Modulize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/module-app.iml" filepath="$PROJECT_DIR$/app/module-app.iml" />
+      <module fileurl="file://D:\Projects\Android\Modulize\module-app\app.iml" filepath="D:\Projects\Android\Modulize\module-app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-main/module-main.iml" filepath="$PROJECT_DIR$/app-main/module-main.iml" />
+      <module fileurl="file://D:\Projects\Android\Modulize\lib-common\common.iml" filepath="D:\Projects\Android\Modulize\lib-common\common.iml" />
       <module fileurl="file://$PROJECT_DIR$/device-door/device-door.iml" filepath="$PROJECT_DIR$/device-door/device-door.iml" />
       <module fileurl="file://$PROJECT_DIR$/device-ir/device-ir.iml" filepath="$PROJECT_DIR$/device-ir/device-ir.iml" />
       <module fileurl="file://$PROJECT_DIR$/device-plug/device-plug.iml" filepath="$PROJECT_DIR$/device-plug/device-plug.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lib-common/common.iml" filepath="$PROJECT_DIR$/lib-common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-log/lib-log.iml" filepath="$PROJECT_DIR$/lib-log/lib-log.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-router/lib-router.iml" filepath="$PROJECT_DIR$/lib-router/lib-router.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-socket/lib-socket.iml" filepath="$PROJECT_DIR$/lib-socket/lib-socket.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module-app/app.iml" filepath="$PROJECT_DIR$/module-app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module-main/module-main.iml" filepath="$PROJECT_DIR$/module-main/module-main.iml" />
     </modules>
   </component>
 </project>

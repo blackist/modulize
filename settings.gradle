@@ -1,5 +1,5 @@
-include ':module-app',
-        ':module-main',
+include ':app',
+        ':app-main',
         ':lib-common',
         ':lib-socket',
         ':lib-router',

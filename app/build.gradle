@@ -29,7 +29,7 @@ dependencies {
     if (moduling.toBoolean()) {
         compile project(':lib-common')
     } else {
-        compile project(':module-main')
+        compile project(':app-main')
         compile project(':device-ir')
         compile project(':device-door')
         compile project(':device-plug')
