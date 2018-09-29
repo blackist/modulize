@@ -61,9 +61,9 @@ public class BRouter {
         BAction action = getAction(req);
         if (action != null) {
             Object object = action.startAction(context, req.getData());
-            res.set(object, BRouterRes.ERR_OK);
+            res.set(object, BRouterRes.CODE.OK);
         } else {
-            res.set(BRouterRes.ERR_NOT_FOUND);
+            res.set(BRouterRes.CODE.NOT_FOUND);
         }
         return res;
     }

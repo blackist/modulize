@@ -10,24 +10,22 @@ import org.json.JSONObject;
 
 public class BRouterRes {
 
-    public static final int ERR_OK = 0;
-    public static final int ERR_NOT_FOUND = 1;
-
-    private int code;
+    private CODE code;
     private String msg;
     private Object data;
 
-    public void set(int code) {
+    public void set(CODE code) {
         this.code = code;
+        this.msg = code.toString();
     }
 
-    public void set(Object data, int code) {
+    public void set(Object data, CODE code) {
         this.data = data;
         this.code = code;
-        this.msg = msg;
+        this.msg = code.toString();
     }
 
-    public void set(Object data, int code, String msg) {
+    public void set(Object data, CODE code, String msg) {
         this.data = data;
         this.code = code;
         this.msg = msg;
@@ -41,12 +39,38 @@ public class BRouterRes {
     public String string() {
         JSONObject res = new JSONObject();
         try {
-            res.put("code", code)
+            res.put("code", code.name())
                     .put("msg", msg)
                     .put("data", data);
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return res.toString();
+    }
+
+    /**
+     *
+     */
+    public enum CODE {
+
+        OK("OK"),
+        ERROR("ERROR"),
+        NOT_FOUND("ACTION_NOT_FOUND");
+
+        private final String message;
+
+        /**
+         * msg passed to enum constrctor for each enum constant
+         *
+         * @param msg msg
+         */
+        CODE(final String msg) {
+            this.message = msg;
+        }
+
+        @Override
+        public String toString() {
+            return this.message;
+        }
     }
 }
