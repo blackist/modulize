@@ -26,6 +26,8 @@ android {
         }
     }
 
+    resourcePrefix 'ir_'
+
     sourceSets {
         main {
             if (moduling.toBoolean()) {

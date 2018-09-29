@@ -13,6 +13,8 @@ ext {
     javaVersion = JavaVersion.VERSION_1_8
 
     // Dependencies Version
+    butterknifeVersion = "8.8.1"
+    gsonVersion = "2.8.5"
 }
 
 buildscript {

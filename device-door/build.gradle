@@ -23,6 +23,8 @@ android {
         }
     }
 
+    resourcePrefix 'door_'
+
     sourceSets {
         main {
             if (moduling.toBoolean()) {
