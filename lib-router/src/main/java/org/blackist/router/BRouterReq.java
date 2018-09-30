@@ -14,6 +14,8 @@ public class BRouterReq {
 
     private String action;
 
+    private String path;
+
     private Bundle data;
 
     private BRouterReq() {
@@ -37,6 +39,20 @@ public class BRouterReq {
      */
     public BRouterReq action(String action) {
         this.action = action;
+        return BRouterReq.this;
+    }
+
+    /**
+     * set request path
+     *
+     * @param path request path
+     * @return this
+     */
+    public BRouterReq path(String path) {
+        if (this.data == null) {
+            this.data = new Bundle();
+        }
+        this.path = path;
         return BRouterReq.this;
     }
 
@@ -91,15 +107,11 @@ public class BRouterReq {
         return action;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public String getPath() {
+        return path != null ? path : "";
     }
 
     public Bundle getData() {
         return data;
-    }
-
-    public void setData(Bundle data) {
-        this.data = data;
     }
 }

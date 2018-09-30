@@ -32,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 BRouterRes res = BRouter.push(
                         getApplicationContext(),
-                        BRouterReq.build().action("IrAction")
+                        BRouterReq.build()
+                                .action("IrAction")
+                                .path("/ir/study")
+                                .data("", 0)
+                                .data("", 0)
+                                .data(getIntent().getExtras())
                 );
                 BLog.d(res.string());
             }

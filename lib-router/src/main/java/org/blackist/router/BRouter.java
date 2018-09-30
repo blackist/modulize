@@ -39,14 +39,14 @@ public class BRouter {
     /**
      * register action in router pool.
      *
-     * @param path   path of action
+     * @param name   name of action
      * @param action action
      */
-    public static void register(String path, BAction action) {
-        if (getInstance().actions.containsKey(path)) {
+    public static void register(String name, BAction action) {
+        if (getInstance().actions.containsKey(name)) {
             return;
         }
-        getInstance().actions.put(path, action);
+        getInstance().actions.put(name, action);
     }
 
     /**
@@ -60,7 +60,27 @@ public class BRouter {
         BRouterRes res = new BRouterRes();
         BAction action = getAction(req);
         if (action != null) {
-            Object object = action.startAction(context, req.getData());
+            Object object = action.startAction(context, req.getPath(), req.getData(), null);
+            res.set(object, BRouterRes.CODE.OK);
+        } else {
+            res.set(BRouterRes.CODE.NOT_FOUND);
+        }
+        return res;
+    }
+
+    /**
+     * invoke action by router request.
+     *
+     * @param context context
+     * @param req     request param
+     * @param event   callback
+     * @return router response
+     */
+    public static BRouterRes push(Context context, BRouterReq req, BEvent event) {
+        BRouterRes res = new BRouterRes();
+        BAction action = getAction(req);
+        if (action != null) {
+            Object object = action.startAction(context, req.getPath(), req.getData(), event);
             res.set(object, BRouterRes.CODE.OK);
         } else {
             res.set(BRouterRes.CODE.NOT_FOUND);

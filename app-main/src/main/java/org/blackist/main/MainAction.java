@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import org.blackist.router.BAction;
+import org.blackist.router.BEvent;
 
 /**
  * @author LiangLiang.Dong<liangl.dong@qq.com>
@@ -17,13 +18,19 @@ public class MainAction extends BAction {
     public static final String NAME = "MainAction";
 
     @Override
-    public Object startAction(Context context, Bundle data) {
-        Intent intent = new Intent(context, MainActivity.class);
-        intent.putExtras(data);
-        if (context instanceof Activity) {
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    public Object startAction(Context context, String path, Bundle data, BEvent event) {
+
+        switch (path) {
+
+            default: {
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.putExtras(data);
+                if (context instanceof Activity) {
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                }
+                context.startActivity(intent);
+            }
         }
-        context.startActivity(intent);
 
         return null;
     }

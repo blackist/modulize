@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import org.blackist.router.BAction;
+import org.blackist.router.BEvent;
 
 /**
  * @author LiangLiang.Dong<liangl.dong@qq.com>
@@ -17,7 +18,7 @@ public class DoorAction extends BAction {
     public static final String NAME = "DoorAction";
 
     @Override
-    public Object startAction(Context context, Bundle data) {
+    public Object startAction(Context context, String path, Bundle data, BEvent event) {
         Intent intent = new Intent(context, DoorActivity.class);
         intent.putExtras(data);
         if (context instanceof Activity) {
