@@ -11,11 +11,16 @@ import android.os.Bundle;
 public abstract class BAction {
 
     /**
+     * return data
+     */
+    protected Object data = null;
+
+    /**
      * @param context application context
      * @param path    request path
-     * @param data    param
+     * @param param   param
      * @param event   callback event
-     * @return return data
+     * @return return param
      */
-    public abstract Object startAction(Context context, String path, Bundle data, BEvent event);
+    public abstract Object startAction(Context context, String path, Bundle param, BEvent event);
 }

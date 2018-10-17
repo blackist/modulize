@@ -2,6 +2,8 @@ package org.blackist.log;
 
 import android.util.Log;
 
+import java.util.Map;
+
 /**
  * @author LiangLiang.Dong<liangl.dong@qq.com>
  * @since 2018/9/26
@@ -13,6 +15,10 @@ public class BLog {
 
     public static void init(String tag) {
         TAG = tag;
+    }
+
+    public static void init(Map<String, Object> options) {
+
     }
 
     public static void d(String log) {

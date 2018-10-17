@@ -60,7 +60,7 @@ public class BRouter {
         BRouterRes res = new BRouterRes();
         BAction action = getAction(req);
         if (action != null) {
-            Object object = action.startAction(context, req.getPath(), req.getData(), null);
+            Object object = action.startAction(context, req.getPath(), req.getParam(), null);
             res.set(object, BRouterRes.CODE.OK);
         } else {
             res.set(BRouterRes.CODE.NOT_FOUND);
@@ -80,7 +80,7 @@ public class BRouter {
         BRouterRes res = new BRouterRes();
         BAction action = getAction(req);
         if (action != null) {
-            Object object = action.startAction(context, req.getPath(), req.getData(), event);
+            Object object = action.startAction(context, req.getPath(), req.getParam(), event);
             res.set(object, BRouterRes.CODE.OK);
         } else {
             res.set(BRouterRes.CODE.NOT_FOUND);

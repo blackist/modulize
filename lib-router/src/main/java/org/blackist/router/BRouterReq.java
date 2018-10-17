@@ -16,10 +16,10 @@ public class BRouterReq {
 
     private String path;
 
-    private Bundle data;
+    private Bundle param;
 
     private BRouterReq() {
-        data = new Bundle();
+        param = new Bundle();
     }
 
     /**
@@ -49,55 +49,60 @@ public class BRouterReq {
      * @return this
      */
     public BRouterReq path(String path) {
-        if (this.data == null) {
-            this.data = new Bundle();
+        if (this.param == null) {
+            this.param = new Bundle();
         }
-        this.path = path;
+        this.path = path == null ? "" : path;
         return BRouterReq.this;
     }
 
     /**
-     * set bundle data for request
+     * set bundle param for request
      *
-     * @param data bundle data
+     * @param data bundle param
      * @return BRouter Request
      */
     public BRouterReq data(Bundle data) {
-        this.data = data;
+        if (this.param == null) {
+            this.param = new Bundle();
+        }
+        if (data != null) {
+            this.param.putAll(data);
+        }
         return BRouterReq.this;
     }
 
     /**
-     * put data into param
+     * put param into param
      *
      * @param key   key
      * @param value value
      * @return router request
      */
     public BRouterReq data(String key, Object value) {
-        if (this.data == null) {
-            this.data = new Bundle();
+        if (this.param == null) {
+            this.param = new Bundle();
         }
         if (value == null) {
-            this.data.putString(key, null);
+            this.param.putString(key, null);
         } else if (value instanceof String) {
-            this.data.putString(key, value.toString());
+            this.param.putString(key, value.toString());
         } else if (value.getClass().equals(int.class)) {
-            this.data.putInt(key, (int) value);
+            this.param.putInt(key, (int) value);
         } else if (value.getClass().equals(boolean.class)) {
-            this.data.putBoolean(key, (boolean) value);
+            this.param.putBoolean(key, (boolean) value);
         } else if (value.getClass().equals(float.class)) {
-            this.data.putLong(key, (long) value);
+            this.param.putLong(key, (long) value);
         } else if (value.getClass().equals(char.class)) {
-            this.data.putChar(key, (char) value);
+            this.param.putChar(key, (char) value);
         } else if (value.getClass().equals(short.class)) {
-            this.data.putShort(key, (short) value);
+            this.param.putShort(key, (short) value);
         } else if (value instanceof Serializable) {
-            this.data.putSerializable(key, (Serializable) value);
+            this.param.putSerializable(key, (Serializable) value);
         } else if (value instanceof Parcelable) {
-            this.data.putParcelable(key, (Parcelable) value);
+            this.param.putParcelable(key, (Parcelable) value);
         } else {
-            this.data.putString(key, null);
+            this.param.putString(key, null);
         }
 
         return BRouterReq.this;
@@ -111,7 +116,7 @@ public class BRouterReq {
         return path != null ? path : "";
     }
 
-    public Bundle getData() {
-        return data;
+    public Bundle getParam() {
+        return param;
     }
 }

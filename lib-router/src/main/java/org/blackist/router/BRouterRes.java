@@ -14,21 +14,25 @@ public class BRouterRes {
     private String msg;
     private Object data;
 
-    public void set(CODE code) {
+    void set(CODE code) {
         this.code = code;
         this.msg = code.toString();
     }
 
-    public void set(Object data, CODE code) {
+    void set(Object data, CODE code) {
         this.data = data;
         this.code = code;
         this.msg = code.toString();
     }
 
-    public void set(Object data, CODE code, String msg) {
+    void set(Object data, CODE code, String msg) {
         this.data = data;
         this.code = code;
         this.msg = msg;
+    }
+
+    public Object data() {
+        return this.data;
     }
 
     /**
