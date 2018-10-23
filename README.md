@@ -1,5 +1,7 @@
-# Modulize
-Android项目开发模块化实践
+![](http://pic.blackist.top/android-modulize-modulize.png)
+
+<!-- <h1 style="text-align:center"> Modulize </h1>  -->
+Android项目开发模块化开发
 
 
 
