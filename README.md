@@ -1,4 +1,4 @@
-![](http://pic.blackist.top/android-modulize-modulize.png)
+![](http://pic.blackist.top/android-modulize-icon.png)
 
 <!-- <h1 style="text-align:center"> Modulize </h1>  -->
 Android项目开发模块化开发
