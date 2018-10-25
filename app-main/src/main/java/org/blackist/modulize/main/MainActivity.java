@@ -26,5 +26,16 @@ public class MainActivity extends AppCompatActivity {
                 BLog.d(res.string());
             }
         });
+
+        findViewById(R.id.main_module_message).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BRouterRes res = BRouter.push(
+                        getApplicationContext(),
+                        BRouterReq.build().action("message")
+                );
+                BLog.d(res.string());
+            }
+        });
     }
 }

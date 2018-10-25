@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="message_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/message_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/message_colorPrimaryDark</item>
+        <item name="colorAccent">@color/message_colorAccent</item>
+    </style>
+
+</resources>
