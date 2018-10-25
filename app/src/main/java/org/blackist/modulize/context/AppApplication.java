@@ -1,11 +1,9 @@
 package org.blackist.modulize.context;
 
-import org.blackist.common.base.BaseApplication;
-import org.blackist.device.door.DoorAction;
-import org.blackist.device.ir.view.IrAction;
-import org.blackist.device.plug.PlugAction;
 import org.blackist.log.BLog;
-import org.blackist.main.MainAction;
+import org.blackist.common.base.BaseApplication;
+import org.blackist.modulize.main.MainAction;
+import org.blackist.modulize.mine.MineAction;
 import org.blackist.router.BRouter;
 
 /**
@@ -27,8 +25,6 @@ public class AppApplication extends BaseApplication {
     private void initRouter() {
         BLog.d("[App]: BRouter initing...");
         BRouter.register(MainAction.NAME, new MainAction());
-        BRouter.register(DoorAction.NAME, new DoorAction());
-        BRouter.register(IrAction.NAME, new IrAction());
-        BRouter.register(PlugAction.NAME, new PlugAction());
+        BRouter.register(MineAction.NAME, new MineAction());
     }
 }

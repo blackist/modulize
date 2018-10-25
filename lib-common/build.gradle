@@ -28,14 +28,48 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    // Support Libary
+    compile "com.android.support:design:$rootProject.supportVersion"
+    compile "com.android.support:cardview-v7:$rootProject.supportVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportVersion"
+    compile "com.android.support.constraint:constraint-layout:1.1.3"
+
+    // Test
     testImplementation 'junit:junit:4.12'
 
+    // library
     compile project(':lib-log')
     compile project(':lib-router')
     compile project(':lib-socket')
 
-    implementation "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
-    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+    api "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // Rx
+    api "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+    // RxBinding
+    api "com.jakewharton.rxbinding:rxbinding:$rootProject.rxBindingVersion"
+    api "com.jakewharton.rxbinding:rxbinding-appcompat-v7:$rootProject.rxBindingVersion"
+    api "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:$rootProject.rxBindingVersion"
+    api "com.jakewharton.rxbinding:rxbinding-design:$rootProject.rxBindingVersion"
+
+    // RxPermission
+    api "com.github.tbruyelle:rxpermissions:$rootProject.rxPermissionVersion"
+    // network
+    api "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+    api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
+    // EventBus
+    api "org.greenrobot:eventbus:$rootProject.eventBusVersion"
+
+    // RefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'//没有使用特殊Header，可以不加这行
+
+    // Views
+    api("com.airbnb.android:lottie:$rootProject.lottieVersion") {
+        exclude group: 'com.android.support'
+    }
 }

@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.blackist.main">
+    package="org.blackist.modulize.mine">
 
     <application
-        android:name="debug.MainApplication"
+        android:name="debug.MineApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/main_app_name"
+        android:label="@string/mine_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/main_AppTheme">
-        <activity android:name="org.blackist.modulize.main.SplashActivity">
+        android:theme="@style/mine_AppTheme">
+        <activity android:name=".MineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="org.blackist.modulize.main.MainActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -13,8 +13,18 @@ ext {
     javaVersion = JavaVersion.VERSION_1_8
 
     // Dependencies Version
+    supportVersion = "26.1.0"
     butterknifeVersion = "8.8.1"
     gsonVersion = "2.8.5"
+    rxJavaVersion = "2.2.2"
+    rxAndroidVersion = "2.1.0"
+    rxBindingVersion = "1.0.0"
+    rxPermissionVersion = "0.10.2"
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.11.0"
+    eventBusVersion = "3.1.1"
+    greenDaoVersion = "3.2.2"
+    lottieVersion = "2.6.1"
 }
 
 buildscript {
@@ -33,9 +43,22 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex')) {
+                details.useVersion "26.1.0"
+            }
+        }
+    }
 }

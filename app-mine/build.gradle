@@ -23,20 +23,20 @@ android {
         }
     }
 
-    resourcePrefix 'main_'
+    resourcePrefix 'mine_'
 
     sourceSets {
         main {
             if (moduling.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
-                println '[Module-Main]: Appling Application...'
+                println '[Module-Mine]: Appling Application...'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
                 // exclude debug java class in release mode
                 java {
                     exclude 'debug/**'
                 }
-                println '[Module-Main]: Appling Library...'
+                println '[Module-Mine]: Appling Library...'
             }
         }
     }

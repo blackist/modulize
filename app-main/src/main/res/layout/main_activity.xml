@@ -4,24 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.blackist.main.MainActivity">
+    tools:context="org.blackist.modulize.main.MainActivity">
 
     <Button
-        android:id="@+id/main_module_door"
+        android:id="@+id/main_module_mine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Door" />
-
-    <Button
-        android:id="@+id/main_module_ir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IR" />
-
-    <Button
-        android:id="@+id/main_module_plug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plug" />
+        android:text="Mine" />
 
 </LinearLayout>
