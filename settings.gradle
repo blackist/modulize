@@ -1,4 +1,4 @@
-include ':app', ':app-mine', ':app-message',
+include ':app', ':app-mine', ':app-message', ':lib-push',
         ':app-main',
         ':lib-common',
         ':lib-socket',

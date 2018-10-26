@@ -40,6 +40,7 @@ dependencies {
 
     // library
     compile project(':lib-log')
+    compile project(':lib-push')
     compile project(':lib-router')
     compile project(':lib-socket')
 

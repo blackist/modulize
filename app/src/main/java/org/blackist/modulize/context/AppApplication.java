@@ -1,9 +1,11 @@
 package org.blackist.modulize.context;
 
+import org.blackist.common.context.PushHandler;
 import org.blackist.log.BLog;
 import org.blackist.modulize.message.MessageAction;
 import org.blackist.modulize.main.MainAction;
 import org.blackist.modulize.mine.MineAction;
+import org.blackist.modulize.push.PushClient;
 import org.blackist.router.BRouter;
 import org.blackist.common.base.BaseApplication;
 
@@ -21,6 +23,8 @@ public class AppApplication extends BaseApplication {
         BLog.d("[App]: Application Starting...");
 
         initRouter();
+
+        PushClient.getInstance().init(this).setAlias("123456789").setListener(new PushHandler());
     }
 
     private void initRouter() {

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -11,9 +11,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        ndk {
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
-        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "org.blackist.modulize",
+                JPUSH_APPKEY : "50604420b6056fcfdb97d6f4",
+                JPUSH_CHANNEL: "developer-default",
+        ]
     }
 
     buildTypes {
@@ -22,18 +24,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    resourcePrefix 'app_'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    if (moduling.toBoolean()) {
-        compile project(':lib-common')
-    } else {
-        compile project(':app-main')
-        compile project(':app-mine')
-        compile project(':app-message')
-    }
+    implementation "com.android.support:appcompat-v7:$rootProject.supportVersion"
+    testImplementation 'junit:junit:4.12'
 }
