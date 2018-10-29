@@ -1,17 +1,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.blackist.common">
 
+    <!--MiPush Required-->
+    <permission
+        android:name="org.blackist.modulize.permission.MIPUSH_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="org.blackist.modulize.permission.MIPUSH_RECEIVE" />
+
     <!-- JPush Required -->
     <permission
         android:name="org.blackist.modulize.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
-    <!-- JPush Required  一些系统要求的权限，如访问网络等-->
+
     <uses-permission android:name="org.blackist.modulize.permission.JPUSH_MESSAGE" />
 
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,6 +28,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application>
 

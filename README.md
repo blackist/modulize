@@ -15,7 +15,7 @@ Android项目模块化开发，包括：
 ### BRouter 
 ---
 
-BRouter是自定义的组件间通信框架，简洁易用，与业务代码高度解耦，且适用于多进程的情况，具体参考[BRouter]()
+BRouter是自定义的组件间通信框架，简洁易用，与业务代码高度解耦，且适用于多进程的情况，具体参考[BRouter](https://github.com/blackist/BRouter)
 
 
 

@@ -1,6 +1,11 @@
 package org.blackist.modulize.push;
 
 import android.content.Context;
+import android.util.Log;
+
+import com.xiaomi.channel.commonutils.logger.LoggerInterface;
+import com.xiaomi.mipush.sdk.Logger;
+import com.xiaomi.mipush.sdk.MiPushClient;
 
 import java.util.Random;
 
@@ -15,8 +20,8 @@ public class PushClient {
 
     private static final String TAG = "PushClient";
 
-    public static final String APP_ID = "2882303761517881106";
-    public static final String APP_KEY = "5111788119106";
+    private static final String MI_APP_ID = "2882303761517880726";
+    private static final String MI_APP_KEY = "5291788041726";
 
     Context mContext;
     PushListener mListener;
@@ -46,9 +51,28 @@ public class PushClient {
      */
     public PushClient init(Context context) {
         this.mContext = context;
-        JPushInterface.setDebugMode(true);
-        JPushInterface.init(mContext);
-        // MiPushClient.registerPush(mContext,APP_ID,APP_KEY);
+        // JPush
+        JPushInterface.setDebugMode(false);
+        JPushInterface.init(context);
+
+        // MiPush
+        MiPushClient.registerPush(context, MI_APP_ID, MI_APP_KEY);
+        LoggerInterface newLogger = new LoggerInterface() {
+            @Override
+            public void setTag(String tag) {
+                // ignore
+            }
+            @Override
+            public void log(String content, Throwable t) {
+                Log.d("[MiPush]", content, t);
+            }
+            @Override
+            public void log(String content) {
+                Log.d("[MiPush]", content);
+            }
+        };
+        Logger.setLogger(context, newLogger);
+
         return PushClient.this;
     }
 
@@ -59,7 +83,7 @@ public class PushClient {
      */
     public PushClient setAlias(String alias) {
         JPushInterface.setAlias(mContext, new Random().nextInt(), alias);
-        // MiPushClient.setAlias(mContext,alias, null);
+        MiPushClient.setAlias(mContext, alias, null);
         return PushClient.this;
     }
 
