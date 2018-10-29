@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.blackist.modulize.main.MainActivity">
+    tools:context="org.blackist.modulize.main.view.MainActivity">
 
     <Button
         android:id="@+id/main_module_mine"

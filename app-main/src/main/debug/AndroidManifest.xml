@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/main_AppTheme">
-        <activity android:name="org.blackist.modulize.main.SplashActivity">
+        <activity android:name="org.blackist.modulize.main.view.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="org.blackist.modulize.main.MainActivity"
+            android:name="org.blackist.modulize.main.view.MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

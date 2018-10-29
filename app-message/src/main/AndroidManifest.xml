@@ -3,7 +3,7 @@
     package="org.blackist.modulize.message">
 
     <application android:theme="@style/common_AppTheme">
-        <activity android:name=".MessageActivity" />
+        <activity android:name=".view.MessageActivity" />
     </application>
 
 </manifest>

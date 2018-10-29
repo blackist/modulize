@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import org.blackist.modulize.main.view.MainActivity;
 import org.blackist.router.BAction;
 import org.blackist.router.BEvent;
 

@@ -3,7 +3,7 @@
     package="org.blackist.modulize.mine">
 
     <application android:theme="@style/common_AppTheme">
-        <activity android:name=".MineActivity" />
+        <activity android:name=".view.MineActivity" />
     </application>
 
 </manifest>

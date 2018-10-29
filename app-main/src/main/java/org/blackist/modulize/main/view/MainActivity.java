@@ -1,21 +1,32 @@
-package org.blackist.modulize.main;
+package org.blackist.modulize.main.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 
+import org.blackist.common.base.BaseActivity;
+import org.blackist.common.base.mvp.BasePresenter;
 import org.blackist.log.BLog;
+import org.blackist.modulize.main.R;
+import org.blackist.modulize.main.presenter.MainPresenter;
 import org.blackist.router.BRouter;
 import org.blackist.router.BRouterReq;
 import org.blackist.router.BRouterRes;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<MainPresenter> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+    protected int getLayoutResId() {
+        return R.layout.main_activity;
+    }
 
+    @Override
+    protected MainPresenter getPresenter() {
+        return new MainPresenter(this);
+    }
+
+    @Override
+    protected void initViewAndData(@Nullable Bundle savedInstanceState) {
         findViewById(R.id.main_module_mine).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,5 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 BLog.d(res.string());
             }
         });
+
+        mPresenter.getUser();
     }
 }
