@@ -1,5 +1,7 @@
 package org.blackist.common.base;
 
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -8,15 +10,21 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 import org.blackist.common.base.mvp.BasePresenter;
 import org.blackist.common.base.mvp.BaseView;
+import org.blackist.common.context.AppConfig;
 import org.blackist.common.context.CommonEvent;
 import org.blackist.log.BLog;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import java.lang.ref.WeakReference;
+
+import cn.edu.zstu.sdmp.apptool.AppManager;
 
 /**
  * @author LiangLiang.Dong<liangl.dong@qq.com>
@@ -34,6 +42,11 @@ public abstract class BaseActivity<TPresenter extends BasePresenter> extends App
      * presenter
      */
     protected TPresenter mPresenter;
+
+    /**
+     * this.refrence
+     */
+    private WeakReference<Activity> weakReference;
 
     /**
      * get layout res id
@@ -55,9 +68,13 @@ public abstract class BaseActivity<TPresenter extends BasePresenter> extends App
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+        // before create
+        beforeCreate();
         super.onCreate(savedInstanceState);
-        BLog.d(this.getLayoutResId() + "");
+        // before set ContentView
+        beforeSetContentView();
         setContentView(this.getLayoutResId());
+        // set ui handler
         this.mUIHandler = new Handler(Looper.getMainLooper());
         // set presenter
         this.mPresenter = this.getPresenter();
@@ -72,11 +89,33 @@ public abstract class BaseActivity<TPresenter extends BasePresenter> extends App
         BLog.e("[Event]: " + event.code);
     }
 
+    /**
+     * before create
+     */
+    private void beforeCreate() {
+        setTheme(AppConfig.getInstance(getApplicationContext()).getThemeId());
+    }
+
+    /**
+     * before set contentView
+     */
+    private void beforeSetContentView() {
+        // Add activity to stack
+        weakReference = new WeakReference<Activity>(this);
+        AppManager.getInstance().addActivity(weakReference);
+        // NoTitle
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        // ScreenPortrait
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         // Unregister EventBus
         EventBus.getDefault().unregister(this);
+        // remove activity
+        AppManager.getInstance().removeActivity(weakReference);
     }
 
     @Override

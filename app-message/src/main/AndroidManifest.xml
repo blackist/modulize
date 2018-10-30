@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.blackist.modulize.message">
 
-    <application android:theme="@style/common_AppTheme">
+    <application>
         <activity android:name=".view.MessageActivity" />
     </application>
 

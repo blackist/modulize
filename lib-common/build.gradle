@@ -21,8 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    resourcePrefix 'common_'
 }
 
 dependencies {
@@ -39,10 +37,12 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // library
+    compile project(':lib-ui')
     compile project(':lib-log')
     compile project(':lib-push')
     compile project(':lib-router')
     compile project(':lib-socket')
+    compile project(':lib-apptool')
 
     api "com.google.code.gson:gson:$rootProject.gsonVersion"
 

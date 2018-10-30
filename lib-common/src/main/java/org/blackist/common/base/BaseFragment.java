@@ -1,5 +1,6 @@
 package org.blackist.common.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -7,6 +8,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,11 @@ public abstract class BaseFragment<TPresenter extends BasePresenter> extends Fra
      * root view.
      */
     protected View rootView;
+
+    /**
+     * context
+     */
+    protected Context context;
 
     /**
      * UI Handler
@@ -61,9 +68,21 @@ public abstract class BaseFragment<TPresenter extends BasePresenter> extends Fra
      */
     protected abstract TPresenter getPresenter();
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        // create ContextThemeWrapper from the original Activity Context with the custom theme
+        // final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), resId);
+        // clone the inflater using the ContextThemeWrapper
+        // LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+
         if (rootView == null) {
             rootView = inflater.inflate(this.getLayoutResId(), container, false);
         }
