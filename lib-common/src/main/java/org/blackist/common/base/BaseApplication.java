@@ -10,11 +10,15 @@ import android.content.Context;
 
 public class BaseApplication extends Application {
 
-    private static BaseApplication instance;
+    protected static BaseApplication instance;
 
-    public static Context context;
+    protected static Context context;
 
     public static BaseApplication getInstance() {
+        return instance;
+    }
+
+    public static Context getContext() {
         return instance;
     }
 

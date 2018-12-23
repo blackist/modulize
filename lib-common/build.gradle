@@ -59,6 +59,7 @@ dependencies {
     api "com.github.tbruyelle:rxpermissions:$rootProject.rxPermissionVersion"
     // network
     api "com.squareup.okhttp3:okhttp:$rootProject.okHttpVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
     api "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     api "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
     api "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"

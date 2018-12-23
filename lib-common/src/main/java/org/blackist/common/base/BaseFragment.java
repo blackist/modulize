@@ -8,7 +8,6 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
-import android.support.v7.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import android.widget.Toast;
 
 import org.blackist.common.base.mvp.BasePresenter;
 import org.blackist.common.base.mvp.BaseView;
-import org.blackist.common.context.CommonEvent;
+import org.blackist.common.event.CommonEvent;
 import org.blackist.log.BLog;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

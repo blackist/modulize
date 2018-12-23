@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
 
+import org.blackist.common.context.CommonApplication;
 import org.blackist.common.context.PushHandler;
 import org.blackist.log.BLog;
 import org.blackist.modulize.message.MessageAction;
@@ -20,7 +21,7 @@ import java.util.List;
  * @since 2018/9/27
  */
 
-public class AppApplication extends BaseApplication {
+public class AppApplication extends CommonApplication {
 
     @Override
     public void onCreate() {
