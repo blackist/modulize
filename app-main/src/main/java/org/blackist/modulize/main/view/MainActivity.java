@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity<MainPresenter> {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "[Main]: theme set");
-                if (AppConfig.getInstance(getApplicationContext()).getTheme().equals(AppConstants.Theme.THEME_DEFAULT)) {
+                    if (AppConfig.getInstance(getApplicationContext()).getTheme().equals(AppConstants.Theme.THEME_DEFAULT)) {
                     AppConfig.getInstance(getApplicationContext()).setTheme(AppConstants.Theme.THEME_DARK);
                 } else {
                     AppConfig.getInstance(getApplicationContext()).setTheme(AppConstants.Theme.THEME_DEFAULT);

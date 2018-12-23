@@ -1,6 +1,5 @@
 package org.blackist.modulize.mine;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,9 +25,7 @@ public class MineAction extends BAction {
             default: {
                 Intent intent = new Intent(context, MineActivity.class);
                 intent.putExtras(param);
-                if (context instanceof Activity) {
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                }
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         }
