@@ -25,4 +25,18 @@
         style="?android:attr/buttonStyle"
         android:text="Theme" />
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_tiny"
+        android:background="?attr/colorAccent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorAccent"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Use colorAccent \nAs \nItem Backgroud" />
+    </android.support.v7.widget.CardView>
+
 </LinearLayout>

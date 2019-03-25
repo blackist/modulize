@@ -1,44 +1,42 @@
-package org.blackist.common.context;
+package cn.edu.zstu.sdmp.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.annotation.StyleRes;
 import android.util.Log;
 
-import org.blackist.common.R;
-
 /**
  * @author LiangLiang.Dong<liangl.dong@qq.com>
  * @since 2018/10/30
  */
 
-public class AppConfig {
+public class UIConfig {
 
-    private static final String TAG = "AppConfig";
+    private static final String TAG = "UIConfig";
 
-    private static final String APP_THEME = "mTheme";
+    private static final String APP_THEME = "app_theme";
 
     private Context mContext;
     private SharedPreferences mPreference;
 
     private static @StyleRes
     int mThemeId;
-    private static AppConfig instance;
+    private static UIConfig instance;
 
-    private AppConfig(Context context) {
+    private UIConfig(Context context) {
         mContext = context;
 
         // theme config
         mPreference = context.getSharedPreferences(TAG, Context.MODE_PRIVATE);
-        setTheme(mPreference.getString(APP_THEME, AppConstants.Theme.THEME_DEFAULT));
-        Log.d(TAG, "[App]: theme " + mPreference.getString(APP_THEME, AppConstants.Theme.THEME_DEFAULT));
+        setTheme(mPreference.getString(APP_THEME, UIConstants.Theme.THEME_DEFAULT));
+        Log.d(TAG, "[App]: theme " + mPreference.getString(APP_THEME, UIConstants.Theme.THEME_DEFAULT));
     }
 
-    public static AppConfig getInstance(Context context) {
+    public static UIConfig getInstance(Context context) {
         if (instance == null) {
-            synchronized (AppConfig.class) {
+            synchronized (UIConfig.class) {
                 if (instance == null) {
-                    instance = new AppConfig(context);
+                    instance = new UIConfig(context);
                 }
             }
         }
@@ -66,25 +64,25 @@ public class AppConfig {
         }
         mPreference.edit().putString(APP_THEME, theme).apply();
         switch (theme) {
-            case AppConstants.Theme.THEME_DEFAULT: {
+            case UIConstants.Theme.THEME_DEFAULT: {
                 mThemeId = R.style.AppTheme;
             }
             break;
 
-            case AppConstants.Theme.THEME_DARK: {
+            case UIConstants.Theme.THEME_DARK: {
                 mThemeId = R.style.AppDarkTheme;
             }
             break;
 
             default: {
                 mThemeId = R.style.AppTheme;
-                mPreference.edit().putString(APP_THEME, AppConstants.Theme.THEME_DEFAULT).apply();
+                mPreference.edit().putString(APP_THEME, UIConstants.Theme.THEME_DEFAULT).apply();
             }
         }
     }
 
     public String getTheme() {
-        return mPreference.getString(APP_THEME, AppConstants.Theme.THEME_DEFAULT);
+        return mPreference.getString(APP_THEME, UIConstants.Theme.THEME_DEFAULT);
     }
 
 }

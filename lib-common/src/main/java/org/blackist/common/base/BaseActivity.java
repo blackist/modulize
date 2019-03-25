@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import org.blackist.common.base.mvp.BasePresenter;
 import org.blackist.common.base.mvp.BaseView;
-import org.blackist.common.context.AppConfig;
+import cn.edu.zstu.sdmp.ui.UIConfig;
 import org.blackist.common.event.CommonEvent;
 import org.blackist.log.BLog;
 import org.greenrobot.eventbus.EventBus;
@@ -93,7 +93,7 @@ public abstract class BaseActivity<TPresenter extends BasePresenter> extends App
      * before create
      */
     private void beforeCreate() {
-        setTheme(AppConfig.getInstance(getApplicationContext()).getThemeId());
+        setTheme(UIConfig.getInstance(getApplicationContext()).getThemeId());
     }
 
     /**

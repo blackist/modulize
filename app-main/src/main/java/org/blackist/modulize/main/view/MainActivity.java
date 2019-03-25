@@ -8,8 +8,8 @@ import android.view.View;
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
 
 import org.blackist.common.base.BaseActivity;
-import org.blackist.common.context.AppConfig;
-import org.blackist.common.context.AppConstants;
+import cn.edu.zstu.sdmp.ui.UIConfig;
+import cn.edu.zstu.sdmp.ui.UIConstants;
 import org.blackist.log.BLog;
 import org.blackist.modulize.main.R;
 import org.blackist.modulize.main.presenter.MainPresenter;
@@ -68,10 +68,10 @@ public class MainActivity extends BaseActivity<MainPresenter> {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "[Main]: theme set");
-                    if (AppConfig.getInstance(getApplicationContext()).getTheme().equals(AppConstants.Theme.THEME_DEFAULT)) {
-                    AppConfig.getInstance(getApplicationContext()).setTheme(AppConstants.Theme.THEME_DARK);
+                    if (UIConfig.getInstance(getApplicationContext()).getTheme().equals(UIConstants.Theme.THEME_DEFAULT)) {
+                    UIConfig.getInstance(getApplicationContext()).setTheme(UIConstants.Theme.THEME_DARK);
                 } else {
-                    AppConfig.getInstance(getApplicationContext()).setTheme(AppConstants.Theme.THEME_DEFAULT);
+                    UIConfig.getInstance(getApplicationContext()).setTheme(UIConstants.Theme.THEME_DEFAULT);
                 }
                 AppManager.getInstance().recreateAllActivity();
             }
