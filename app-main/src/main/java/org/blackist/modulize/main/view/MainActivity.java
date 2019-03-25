@@ -5,6 +5,8 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 
+import com.wuhenzhizao.titlebar.widget.CommonTitleBar;
+
 import org.blackist.common.base.BaseActivity;
 import org.blackist.common.context.AppConfig;
 import org.blackist.common.context.AppConstants;
@@ -21,6 +23,8 @@ public class MainActivity extends BaseActivity<MainPresenter> {
 
     private static final String TAG = "MainActivity";
 
+    private CommonTitleBar commonTitleBar;
+
     @Override
     protected int getLayoutResId() {
         return R.layout.main_activity;
@@ -33,6 +37,11 @@ public class MainActivity extends BaseActivity<MainPresenter> {
 
     @Override
     protected void initViewAndData(@Nullable Bundle savedInstanceState) {
+
+        commonTitleBar = findViewById(R.id.common_titlebar);
+        commonTitleBar.getCenterTextView().setText("标题栏");
+        commonTitleBar.getRightImageButton().setImageResource(R.drawable.action_bar_setting);
+
         findViewById(R.id.main_module_mine).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +64,7 @@ public class MainActivity extends BaseActivity<MainPresenter> {
             }
         });
 
-        findView(R.id.main_module_theme).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.main_module_theme).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "[Main]: theme set");

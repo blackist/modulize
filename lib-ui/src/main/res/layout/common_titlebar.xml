@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.wuhenzhizao.titlebar.widget.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/common_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:centerTextColor="@color/white"
+        titlebar:centerTextSize="@dimen/font_normal"
+        titlebar:centerType="textView"
+        titlebar:fillStatusBar="true"
+        titlebar:leftImageResource="@drawable/common_transparent"
+        titlebar:leftType="imageButton"
+        titlebar:rightType="imageButton"
+        titlebar:showBottomLine="false"
+        titlebar:statusBarColor="?attr/colorPrimary"
+        titlebar:titleBarColor="?attr/colorPrimary" />
+</merge>

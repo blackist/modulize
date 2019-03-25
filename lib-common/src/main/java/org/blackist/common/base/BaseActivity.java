@@ -119,8 +119,8 @@ public abstract class BaseActivity<TPresenter extends BasePresenter> extends App
     }
 
     @Override
-    public View findView(int resId) {
-        return findViewById(resId);
+    public <T extends View> T findViewById(int resId) {
+        return super.findViewById(resId);
     }
 
     @Override

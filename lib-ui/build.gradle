@@ -25,4 +25,7 @@ dependencies {
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
+
+    // Title Bar
+    api 'com.wuhenzhizao:titlebar:1.1.3'
 }

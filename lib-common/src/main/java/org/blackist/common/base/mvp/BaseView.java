@@ -16,7 +16,7 @@ public interface BaseView {
      * @param resId
      * @return
      */
-    View findView(@IdRes int resId);
+    <T extends View> T findViewById(@IdRes int resId);
 
     /**
      * toast on ui thread.

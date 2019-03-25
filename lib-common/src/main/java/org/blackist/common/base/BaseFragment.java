@@ -122,7 +122,7 @@ public abstract class BaseFragment<TPresenter extends BasePresenter> extends Fra
     }
 
     @Override
-    public View findView(int resId) {
+    public View findViewById(int resId) {
         return rootView.findViewById(resId);
     }
 }

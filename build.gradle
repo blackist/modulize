@@ -4,6 +4,7 @@ ext {
     targetSdkVersion = 26
     compileSdkVersion = 26
     buildToolsVersion = '25.0.3'
+    supportVersion = "26.1.0"
 
     // Build Version
     versionCode = 1
@@ -13,7 +14,6 @@ ext {
     javaVersion = JavaVersion.VERSION_1_8
 
     // Dependencies Version
-    supportVersion = "26.1.0"
     butterknifeVersion = "8.8.1"
     gsonVersion = "2.8.5"
     rxJavaVersion = "2.2.2"
