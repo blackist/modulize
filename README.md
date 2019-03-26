@@ -1,5 +1,6 @@
 ![](http://pic.blackist.top/android-modulize-logo-readme.png)
 
+
 <!-- <h1 style="text-align:center"> Modulize </h1>  -->
 
 Android项目模块化开发，包括：
@@ -10,7 +11,6 @@ Android项目模块化开发，包括：
 - MVP设计模式
 - 多渠道推送集成，包括消息去重设计
 - 服务器长连接的模块化设计
-
 
 
 ### BRouter 
