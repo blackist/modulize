@@ -1,23 +1,32 @@
-![](http://pic.blackist.top/android-modulize-icon.png)
+![](http://pic.blackist.top/android-modulize-logo-readme.png)
 
 <!-- <h1 style="text-align:center"> Modulize </h1>  -->
 
 Android项目模块化开发，包括：
 
-- 基础的模块化分割、基础库抽离、业务层分割
+- 基础库搭建、公共库抽离、业务层分割
 - 自定义组件间通信框架BRouter
+- UI风格统一并实现主题切换
+- MVP设计模式
 - 多渠道推送集成，包括消息去重设计
-- ORM数据库集成
 - 服务器长连接的模块化设计
 
 
 
 ### BRouter 
----
 
-BRouter是自定义的组件间通信框架，简洁易用，与业务代码高度解耦，且适用于多进程的情况，具体参考[BRouter](https://github.com/blackist/BRouter)
+BRouter是自定义的组件间通信框架，简洁易用，与业务代码高度解耦，且适用于多进程的情况，参见[BRouter](https://github.com/blackist/BRouter)
 
 
+### 风格统一主题切换
+
+客户端开发中UI设计极其重要，直接影响用户体验和App的品质；其次UI设计应做到样式、排版统一，简化布局文件，方便全局修改和维护。参见[UI统一&主题变色](https://blackist.org/2019/03/21/android-modulize-ui-theme/)
+
+![](http://pic.blackist.top/android-modulize-ui-theme-alertdialog-nal.png)
+
+切换主题后：
+
+![](http://pic.blackist.top/android-modulize-ui-theme-alertdialog.png)
 
 ### Push
 ---

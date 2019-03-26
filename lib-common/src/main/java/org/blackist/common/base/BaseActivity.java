@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import org.blackist.common.base.mvp.BasePresenter;
 import org.blackist.common.base.mvp.BaseView;
-import cn.edu.zstu.sdmp.ui.UIConfig;
+import org.blackist.modulize.ui.UIConfig;
 import org.blackist.common.event.CommonEvent;
 import org.blackist.log.BLog;
 import org.greenrobot.eventbus.EventBus;

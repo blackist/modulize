@@ -13,6 +13,6 @@
         titlebar:leftType="imageButton"
         titlebar:rightType="imageButton"
         titlebar:showBottomLine="false"
-        titlebar:statusBarColor="?attr/colorPrimary"
+        titlebar:statusBarColor="?attr/colorPrimaryDark"
         titlebar:titleBarColor="?attr/colorPrimary" />
 </merge>

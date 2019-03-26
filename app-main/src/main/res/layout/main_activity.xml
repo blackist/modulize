@@ -25,6 +25,11 @@
         style="?android:attr/buttonStyle"
         android:text="Theme" />
 
+    <Button
+        android:id="@+id/main_module_dialog"
+        style="?android:attr/buttonStyle"
+        android:text="AlertDialog" />
+
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

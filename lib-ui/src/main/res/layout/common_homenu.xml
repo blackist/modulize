@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.edu.zstu.sdmp.ui.view.layout.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/HomenuItem">
+
+    <ImageView
+        android:id="@+id/homenu_icon"
+        style="@style/HomenuItemIcon" />
+
+    <TextView
+        android:id="@+id/homenu_label"
+        style="@style/HomenuItemLabel" />
+
+</cn.edu.zstu.sdmp.ui.view.layout.SquareLayout>
