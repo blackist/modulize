@@ -1,4 +1,4 @@
-![](http://pic.blackist.top/android-modulize-logo-readmes.png)
+![](https://blogres.blackist.org/android-modulize-logo-readmes.png)
 
 
 <!-- <h1 style="text-align:center"> Modulize </h1>  -->
@@ -22,11 +22,11 @@ BRouter是自定义的组件间通信框架，简洁易用，与业务代码高�
 
 客户端开发中UI设计极其重要，直接影响用户体验和App的品质；其次UI设计应做到样式、排版统一，简化布局文件，方便全局修改和维护。参见[UI统一&主题变色](https://blackist.org/2019/03/21/android-modulize-ui-theme/)
 
-![](http://pic.blackist.top/android-modulize-ui-theme-alertdialog-nal.png)
+![](https://blogres.blackist.org/android-modulize-ui-theme-alertdialog-nal.png)
 
 切换主题后：
 
-![](http://pic.blackist.top/android-modulize-ui-theme-alertdialog.png)
+![](https://blogres.blackist.org/android-modulize-ui-theme-alertdialog.png)
 
 ### Push
 ---
